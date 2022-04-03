@@ -4,5 +4,5 @@ class Solution:
         c = Counter(nums)
         for item, cnt in c.items():
             if cnt > 1:
-                return True 
+                return True
         return False
