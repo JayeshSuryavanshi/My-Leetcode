@@ -1,6 +1,6 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        a , b = 1, 1
+        a = b = 1
         
         # _ denotes 'for everything in'
         for _ in range(n):
