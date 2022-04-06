@@ -6,11 +6,11 @@ class Solution:
         ones = defaultdict(int)
         twos = defaultdict(int)
 
-        for t, v in enumerate(arr):  # O(N)
+        for t, v in enumerate(arr): 
             total = (total + twos[target - v]) % mod
-            for k, c in ones.items():  # O(W)
-                twos[k+v] += c
-            ones[v] += 1
+            for k, c in ones.items(): 
+                twos[k+v] = twos[k+v] + c
+            ones[v] = ones[v] + 1
 
         return total
         
