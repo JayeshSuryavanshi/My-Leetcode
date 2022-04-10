@@ -11,6 +11,6 @@ class Solution:
                 
             else:
                 pointer_2 += 1
-                
+              
         return pointer_1 == len(s)
             
