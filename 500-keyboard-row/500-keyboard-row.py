@@ -1,8 +1,6 @@
 class Solution:
     def findWords(self, words: List[str]) -> List[str]:
-        first = 'qwertyuiop'
-        second = 'asdfghjkl'
-        third = 'zxcvbnm'
+        first, second, third = 'qwertyuiop', 'asdfghjkl', 'zxcvbnm'
         final = []
         
         for word in words:
