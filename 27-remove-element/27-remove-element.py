@@ -6,3 +6,4 @@ class Solution:
                 del nums[k]
             else:
                 k += 1
+                
