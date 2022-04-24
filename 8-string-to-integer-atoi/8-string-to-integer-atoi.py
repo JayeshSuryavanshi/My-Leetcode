@@ -1,24 +1,31 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
+        s=list(s)
+        isNegative = False
+
         i = 0
-        positive = True
-        while(i<len(s) and s[i]==" "):
+        while i<len(s) and s[i]==" ":
             i+=1
-        if i < len(s) and ord(s[i]) == 45 :
-            positive = False
+        if i<len(s) and s[i] == '-':
+            isNegative = True
             i+=1
-        elif i < len(s) and ord(s[i]) == 43:
+        elif i<len(s) and s[i] == '+':
+            isNegative = False
             i+=1
             
-        num = 0
-        while i< len(s) and (48<=ord(s[i])<=57):
-            num = num*10 + (ord(s[i])-48)
+        total = 0
+        
+        while i<len(s) and s[i].isdigit():
+            total = total*10 + int(s[i])
             i+=1
-        if not positive:
-            if -num < -2147483648:
-                return -2147483648
-            return -num
-        if num>2147483647:
-            return 2147483647
-        return num
-    
+            if not isNegative and total > 2147483647:
+                total = 2147483647
+                break
+            elif isNegative and total > 2147483648:
+                total = 2147483648
+                break
+        
+        if isNegative:
+            return -total
+        else:
+            return total
