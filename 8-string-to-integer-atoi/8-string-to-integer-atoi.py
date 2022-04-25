@@ -1,31 +1,16 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
-        s=list(s)
-        isNegative = False
-
-        i = 0
-        while i<len(s) and s[i]==" ":
-            i+=1
-        if i<len(s) and s[i] == '-':
-            isNegative = True
-            i+=1
-        elif i<len(s) and s[i] == '+':
-            isNegative = False
-            i+=1
-            
-        total = 0
+        if len(s) == 0 :
+            return 0
+        _list = list(s.strip())
+        if len(_list) == 0 : 
+            return 0
+        sign = -1 if _list[0] == '-' else 1
         
-        while i<len(s) and s[i].isdigit():
-            total = total*10 + int(s[i])
-            i+=1
-            if not isNegative and total > 2147483647:
-                total = 2147483647
-                break
-            elif isNegative and total > 2147483648:
-                total = 2147483648
-                break
-        
-        if isNegative:
-            return -total
-        else:
-            return total
+        if _list[0] in ['-','+']: 
+            del _list[0]
+        ret, i = 0, 0
+        while i < len(_list) and _list[i].isdigit() :
+            ret = ret*10 + ord(_list[i]) - ord('0')
+            i += 1
+        return max(-2**31, min(sign * ret,2**31-1))
