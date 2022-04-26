@@ -2,10 +2,11 @@ class Solution:
     def isValid(self, s: str) -> bool:
         mapping = {'(':')', '{':'}','[':']'}
         stack = []
-        for bracket in s:
-            if bracket in mapping:
-                stack.append(bracket)
-            elif len(stack) == 0 or mapping[stack.pop()] != bracket:
+        for i in s:
+            if i in mapping:
+                stack.append(i)
+            elif len(stack) == 0 \
+            or mapping[stack.pop()] != i:
                 return False
         return len(stack) == 0 
         
