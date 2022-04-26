@@ -1,7 +1,5 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        print(list(set(nums)))
-        
         duplicates = 0
 
         for i in range(1, len(nums)):
