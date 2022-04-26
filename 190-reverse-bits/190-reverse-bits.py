@@ -4,7 +4,6 @@ class Solution:
         bits = '{0:032b}'.format(n)
         # reversing the bits
         reverse_bits = bits[::-1]
-        print(re)
         # finally we have to return as int
         return int(reverse_bits, 2)
 
