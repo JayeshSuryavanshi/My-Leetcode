@@ -2,7 +2,6 @@ class Solution:
     def toHex(self, num: int) -> str:
         if num == 0: 
             return '0'
-        
         map = '0123456789abcdef'
         final = ''
         if num<0: 
