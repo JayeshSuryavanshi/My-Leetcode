@@ -1,13 +1,15 @@
 class Solution:
     def fizzBuzz(self, n: int) -> List[str]:
-        result = []
-        for num in range(1, n+1):
+        ret = []
+        for num in range(1,n+1):
+            divisible_by_3 = (num % 3 == 0)
+            divisible_by_5 = (num % 5 == 0)
             if num % 3 == 0 and num % 5 == 0:
-                result.append("FizzBuzz")
+                ret.append("FizzBuzz")
             elif num % 3 == 0:
-                result.append("Fizz")
+                ret.append("Fizz")
             elif num % 5 == 0:
-                result.append("Buzz")
+                ret.append("Buzz")
             else:
-                result.append(str(num))
-        return result
+                ret.append(str(num))
+        return ret
