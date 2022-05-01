@@ -1,8 +1,5 @@
 class Solution:
     def removeDigit(self, number: str, digit: str) -> str:
-        # for i in number:
-        #     if i == digit:
-        #         return number.strip(digit)
         res = []
         for index,value in enumerate(number):
             curr = list(number)
