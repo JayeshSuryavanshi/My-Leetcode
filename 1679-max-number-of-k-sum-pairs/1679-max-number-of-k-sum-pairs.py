@@ -10,5 +10,4 @@ class Solution:
                 res[i] = 1
             else:
                 res[i] += 1
-        
         return pairs
