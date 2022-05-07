@@ -1,7 +1,7 @@
 class Solution:
     def find132pattern(self, nums: List[int]) -> bool:
         stack = []
-        neg = float(-inf)
+        neg = float('-inf')
         rev = nums[::-1]
         for i in rev:
             if i < neg: 
