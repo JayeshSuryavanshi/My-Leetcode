@@ -13,6 +13,7 @@ class Solution:
                        '9':'wxyz'
                   }
 
+        #recursive approach
         def recursive(i=0, combo="", out=[]):
             if i == len(digits):
                 out.append(combo)
