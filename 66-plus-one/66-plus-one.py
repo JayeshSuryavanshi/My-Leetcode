@@ -4,7 +4,7 @@ class Solution:
         
         for i in digits:
             s = s + str(i)
-        s = str(int(s) + 1)
+        s = str((int(s) + 1))
         
         return list(s)
         
