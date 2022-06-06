@@ -11,10 +11,6 @@ class Solution:
 #             return res[2] 
 #         else:
 #             return max(res)
-        res = []
-        for i in nums:
-            if i not in res:
-                res.append(i)
-        res.sort()
-        return res[-3] if len(res)>=3 else res[-1]
+        nums = sorted(set(nums), reverse=True)
+        return nums[2] if len(nums) >= 3 else nums[0]
         
