@@ -12,11 +12,11 @@ class Solution:
         while current:
             temp_set.add(current)
             current=current.next
-        
         current = headB
+        
         while current:
             if current in temp_set:
                 return current
             current = current.next
-
+            
         return None
