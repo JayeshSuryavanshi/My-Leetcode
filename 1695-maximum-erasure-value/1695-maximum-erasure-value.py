@@ -1,3 +1,4 @@
+from collections import defaultdict
 class Solution:
     def maximumUniqueSubarray(self, nums: List[int]) -> int:
         counter = defaultdict(int)
