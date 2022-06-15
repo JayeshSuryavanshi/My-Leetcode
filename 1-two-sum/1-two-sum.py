@@ -7,3 +7,4 @@ class Solution:
             if target-nums[i] in dictionary:
                 return [i , dictionary[target-nums[i]]]
             dictionary[nums[i]] = i
+
