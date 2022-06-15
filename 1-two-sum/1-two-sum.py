@@ -1,5 +1,15 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashset = {}
+        
+#         for num in nums:
+#             potentialMatch = target - num
+#             if potentialMatch in hashset:
+#                 return [nums.index(potentialMatch), nums.index(num)]
+#             else:
+#                 hashset[num] = True
+                
+#         return []
         
         dictionary = {}
         
