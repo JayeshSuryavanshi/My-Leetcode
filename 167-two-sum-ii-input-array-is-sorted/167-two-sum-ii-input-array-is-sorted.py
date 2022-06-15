@@ -1,14 +1,17 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        # Using a two pointer approach 
+        # nums = set(numbers)
+        # nums1 = list(nums)
+        print(numbers)
         i = 0
-        j = len(numbers) -1
+        j = len(numbers)-1
         
-        while numbers[i] + numbers[j]!=target:
-            s = numbers[i] + numbers[j]        
-            if s > target:
-                j-=1
+        while i < j:
+            potentialMatch = numbers[i] + numbers[j]
+            if potentialMatch == target:
+                return [i + 1, j + 1]
+            elif potentialMatch < target:
+                i = i + 1
             else:
-               i+=1 
-        
-        return [i + 1 , j + 1]
+                j = j - 1
+                
