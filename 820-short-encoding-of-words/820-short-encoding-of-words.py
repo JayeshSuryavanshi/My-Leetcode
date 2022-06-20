@@ -1,6 +1,6 @@
 class Solution:
     def minimumLengthEncoding(self, words: List[str]) -> int:
-        root = dict()
+        root = {}
         leaves = []
         for word in set(words):
             cur = root
