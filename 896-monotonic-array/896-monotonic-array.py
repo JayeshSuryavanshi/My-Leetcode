@@ -1,5 +1,6 @@
 class Solution:
     def isMonotonic(self, nums: List[int]) -> bool:
+        # Time Complexity = O(n) and Space Complexity = O(1)
         isNonDecreasing = True
         isNonIncreasing = True
         
