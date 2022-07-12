@@ -14,12 +14,5 @@ class Solution:
                 i += 1
         return squares
                 
-          # Naive Approach
-#         squares = []
-#         square = lambda x: x ** 2
-        
-#         for num in nums:
-#             squares.append(square(num))
-#         return sorted(squares)
           
         
