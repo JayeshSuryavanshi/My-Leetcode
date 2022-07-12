@@ -1,9 +1,25 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        squares = []
-        square = lambda x: x ** 2
+        # Optimal Approach
+        i = 0
+        j = len(nums)-1
         
-        for num in nums:
-            squares.append(square(num))
-        return sorted(squares)
+        squares = []
+        while i <= j:
+            if abs(nums[i]) < abs(nums[j]):
+                squares.insert(0,nums[j] ** 2)
+                j -= 1
+            else:
+                squares.insert(0,nums[i] ** 2)
+                i += 1
+        return squares
+                
+          # Naive Approach
+#         squares = []
+#         square = lambda x: x ** 2
+        
+#         for num in nums:
+#             squares.append(square(num))
+#         return sorted(squares)
+          
         
