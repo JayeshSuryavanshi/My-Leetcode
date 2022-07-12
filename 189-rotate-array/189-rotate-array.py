@@ -1,3 +1,4 @@
-class Solution(object):
-    def rotate(self, nums, k):
-        nums[:] = nums[-(k % len(nums)):] + nums[:-(k % len(nums))]
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        n = len(nums)
+        nums[:] = nums[n - k % n:] + nums[:n- k % n]
