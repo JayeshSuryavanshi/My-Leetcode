@@ -1,5 +1,6 @@
 class Solution:
     def reverseString(self, s: List[str]) -> None:
+        # Two Pointer Approach - Optimal
         i = 0
         j = len(s)-1
         
