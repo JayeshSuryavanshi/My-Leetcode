@@ -1,10 +1,14 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {}
         
-        dictionary = {}
+        for idx, value in enumerate(nums):
+            remaining = target - nums[idx]
+            if remaining in seen:
+                return [seen[remaining], idx]
+            else:
+                seen[value] = idx
+                
+            
         
-        for i in range(len(nums)):
-            if target-nums[i] in dictionary:
-                return [i , dictionary[target-nums[i]]]
-            dictionary[nums[i]] = i
-
+        
