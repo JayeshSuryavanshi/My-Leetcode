@@ -1,4 +1,5 @@
 class Solution:
+    # TC: O(n + nlogn) = O(nlogn)
     def targetIndices(self, nums: List[int], target: int) -> List[int]:
         nums = sorted(nums) 
         final = []
