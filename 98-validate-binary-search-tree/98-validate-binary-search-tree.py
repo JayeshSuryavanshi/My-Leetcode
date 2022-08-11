@@ -7,7 +7,7 @@
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         
-        infinity = sys.maxsize
+        INF = sys.maxsize
         
         def helper(node, lower, upper):
             
@@ -20,4 +20,4 @@ class Solution:
             else:
                 return False
                     
-        return helper( node=root, lower=-infinity, upper=infinity )
+        return helper( node=root, lower=-INF, upper=INF )
