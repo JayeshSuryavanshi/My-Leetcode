@@ -19,7 +19,5 @@ class Solution:
             
             else:
                 return False
-            
-        # ----------------------------------
-        
+                    
         return helper( node=root, lower=-INF, upper=INF )
