@@ -6,11 +6,6 @@ class Solution:
                 nums[l], nums[r] = nums[r], nums[l]
                 l += 1
         return nums
-        
-#         l = len(nums)
-#         while 0 in nums:
-#             nums.remove(0)
-#         while len(nums) < l:
-#             nums.append(0)
+
                 
         
