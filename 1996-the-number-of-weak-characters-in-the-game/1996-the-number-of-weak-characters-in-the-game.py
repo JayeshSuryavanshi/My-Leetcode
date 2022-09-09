@@ -4,8 +4,6 @@ class Solution:
         result = 0
         maximum = 0
         for attack, defence in properties:
-            if (defence < maximum):
-                result += 1
-            else:
-                maximum = defence
+            if (defence < maximum): result += 1
+            else: maximum = defence
         return result
