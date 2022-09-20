@@ -1,5 +1,5 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        p = ''.join(sorted(s))
-        q = ''.join(sorted(t))
-        return p == q
+        count1 = collections.Counter(s)
+        count2 = collections.Counter(t)
+        return count1 == count2
