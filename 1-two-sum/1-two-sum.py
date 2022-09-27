@@ -1,7 +1,12 @@
 class Solution:
-   def twoSum(self, nums: List[int], target: int) -> List[int]:
-       seen = {}
-       for i, value in enumerate(nums): 
-           remaining = target - nums[i] 
-           if remaining in seen:return [i, seen[remaining]]  
-           else:seen[value] = i  
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dictionary = {}
+        
+        for i in range(len(nums)):
+            potentialMatch = target - nums[i]
+            if potentialMatch in dictionary:
+                return [i, dictionary[potentialMatch]]
+            else:
+                dictionary[nums[i]] = i
+
+            
