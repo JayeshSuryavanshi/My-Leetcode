@@ -1,12 +1,10 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dictionary = {}
+        hashmap = {}
         
         for i in range(len(nums)):
-            potentialMatch = target - nums[i]
-            if potentialMatch in dictionary:
-                return [i, dictionary[potentialMatch]]
+            y = target - nums[i]
+            if y in hashmap:
+                return [i, hashmap[y]]
             else:
-                dictionary[nums[i]] = i
-
-            
+                hashmap[nums[i]] = i
