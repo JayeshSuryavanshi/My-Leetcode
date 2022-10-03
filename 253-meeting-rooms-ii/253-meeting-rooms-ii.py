@@ -7,5 +7,4 @@ class Solution:
                 heapq.heappush(heap, y)
             else:
                 heapq.heappushpop(heap,y)
-
         return len(heap)
