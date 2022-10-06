@@ -1,6 +1,7 @@
 class Solution:
     def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
         edgeMap = defaultdict(list)
+        print(edgeMap)
         for a,b in connections:
             edgeMap[a].append(b)
             edgeMap[b].append(a)
