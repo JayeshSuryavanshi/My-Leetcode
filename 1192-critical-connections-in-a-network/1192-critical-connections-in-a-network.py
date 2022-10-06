@@ -1,30 +1,20 @@
 class Solution:
     def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
-        disc = [None] * n
-        low = [None] * n
-        
-        network = [[] for _ in range(n)]
-        for a, b in connections:
-            network[a].append(b)
-            network[b].append(a)
-        print(network)
-        def tarjan(prev, node, time, disc, low, network, ans):
-            if disc[node] != None:
-                return disc[node]
-
-            disc[node] = time
-            low[node] = time
-            
-            for x in network[node]:
-                if x != prev:
-                    newLow = tarjan(node, x, time+1, disc, low, network, ans)
-                    low[node] = min(low[node], newLow)
-                    if low[x] > disc[node]:
-                        ans.append([x,node])
-                        
-            return low[node]
-        
-        ans = []
-        tarjan(0, 0, 0, disc, low, network, ans)
-        
+        edgeMap = defaultdict(list)
+        for a,b in connections:
+            edgeMap[a].append(b)
+            edgeMap[b].append(a)
+        disc, low, time, ans = [0] * n, [0] * n, [1], []
+        def dfs(curr: int, prev: int):
+            disc[curr] = low[curr] = time[0]
+            time[0] += 1
+            for next in edgeMap[curr]:
+                if not disc[next]:
+                    dfs(next, curr)
+                    low[curr] = min(low[curr], low[next])
+                elif next != prev:
+                    low[curr] = min(low[curr], disc[next])
+                if low[next] > disc[curr]:
+                    ans.append([curr, next])
+        dfs(0, -1)
         return ans
