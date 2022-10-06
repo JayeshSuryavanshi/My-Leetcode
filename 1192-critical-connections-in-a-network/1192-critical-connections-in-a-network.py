@@ -1,15 +1,15 @@
 class Solution:
     def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
-        disc = [-1]*n
-        low = [-1]*n
+        disc = [None] * n
+        low = [None] * n
         
         network = [[] for _ in range(n)]
         for a, b in connections:
             network[a].append(b)
             network[b].append(a)
-        
+        print(network)
         def tarjan(prev, node, time, disc, low, network, ans):
-            if disc[node] != -1:
+            if disc[node] != None:
                 return disc[node]
 
             disc[node] = time
