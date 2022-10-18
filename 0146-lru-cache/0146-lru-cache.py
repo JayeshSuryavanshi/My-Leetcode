@@ -1,25 +1,23 @@
 class LRUCache:
 
     def __init__(self, capacity: int):
-        self.deque = collections.deque([])
-        self.dictionary = {}
         self.capacity = capacity
-        
+        self.values = OrderedDict()
+
     def get(self, key: int) -> int:
-        if key not in self.dictionary:
+        if key not in self.values:
             return -1
-        self.deque.remove(key)
-        self.deque.append(key)
-        return self.dictionary[key]
+        else:
+            self.values[key] = self.values.pop(key)
+            return self.values[key]
 
     def put(self, key: int, value: int) -> None:
-        if key in self.dictionary:
-            self.deque.remove(key)
-        elif len(self.dictionary) == self.capacity:
-            remove = self.deque.popleft()
-            self.dictionary.pop(remove)
-        self.deque.append(key)
-        self.dictionary[key] = value
+        if key not in self.values:
+            if len(self.values) == self.capacity:
+                self.values.popitem(last=False)
+        else:
+            self.values.pop(key)
+        self.values[key] = value
 
 
 # Your LRUCache object will be instantiated and called as such:
