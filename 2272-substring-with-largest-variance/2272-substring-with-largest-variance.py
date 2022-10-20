@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/substring-with-largest-variance/discuss/2412313/Python-or-Kadene-Algo-or-with-explanation
+
 class Solution:
     def largestVariance(self, s: str) -> int:
 		# Create a dictionary with the count of all chars of s
