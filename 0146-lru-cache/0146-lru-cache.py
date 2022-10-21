@@ -1,5 +1,4 @@
 class LRUCache:
-
     def __init__(self, capacity: int):
         self.capacity = capacity
         self.values = OrderedDict()
