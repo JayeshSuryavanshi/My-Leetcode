@@ -3,8 +3,8 @@ from heapq import *
 
 class MedianFinder:
     def __init__(self):
-        self.small = []  # the smaller half of the list, max heap (invert min-heap)
-        self.large = []  # the larger half of the list, min heap
+        self.small = []  
+        self.large = []  
 
     def addNum(self, num):
         if len(self.small) == len(self.large):
